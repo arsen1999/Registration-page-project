@@ -1,0 +1,133 @@
+
+header {
+  .header-section {
+    height: 130px;
+    left: 0px;
+    top: 0px;
+    background: #34C88A;
+
+    .language {
+      position: absolute;
+      right: 0;
+      padding: 10px;
+      span {
+        cursor: pointer;
+        position: relative;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 24px;
+        margin: 6px;
+        text-align: center;
+        text-transform: capitalize;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .active-language {
+        color: #F8F8F8;
+      }
+    }
+    .img-container {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+
+      img {
+
+      }
+
+    }
+
+    .nav-container {
+
+
+      .nav-bar {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 1100px) {
+          display: none;
+        }
+
+        .sign-in {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          right: 0;
+          margin-right: 120px;
+          text-transform: none;
+          img{
+            margin-right: 8px;
+          }
+        }
+
+        span {
+          position: relative;
+          cursor: pointer;
+          margin: 0 24px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #F8F8F8;
+        }
+      }
+
+      .sign-in {
+      }
+
+      .navbar-size{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @media (min-width: 1100px) {
+          display: none;
+        }
+
+        .navbar-brand {
+          color: #fff;
+          display: inline-block;
+          padding-top: 0.3125rem;
+          padding-bottom: 0.3125rem;
+          margin-right: 1rem;
+          font-size: 1.25rem;
+          line-height: inherit;
+          white-space: nowrap;
+          text-decoration: none;
+        }
+
+        .navbar-toggler {
+          cursor: pointer;
+          color: rgba(255, 255, 255, .5);
+          font-size: 1.25rem;
+          padding: 0.25rem 0.75rem;
+          line-height: 1;
+          background-color: transparent;
+          border: 1px solid transparent;
+          border-radius: 0.25rem;
+          border-color: rgba(255, 255, 255, .1);
+
+          span {
+            background-image: url(../../assets/images/download.svg);
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: middle;
+            content: "";
+            background-size: 100% 100%;
+          }
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+.active{
+  border-bottom: 2px solid #F8F8F8;
+}

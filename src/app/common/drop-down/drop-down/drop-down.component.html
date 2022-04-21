@@ -1,0 +1,20 @@
+<div class="dropdown-container">
+  <div class="selected-item" #drop>
+    {{DropTitle}}
+    <img src="../../../../assets/images/Vector.svg">
+  </div>
+  <div class="dropdown-items" [ngStyle]="{'display':!open ? 'none':'block'}">
+    <input class="input-search"
+           *ngIf="statusSearch"
+           type="text"
+           placeholder='{{"Search" | translate}}'
+           [(ngModel)]="searchText">
+
+    <hr *ngIf="statusSearch">
+
+    <div class="dropdown-item" *ngFor="let itemName of dropData | searchPipe : searchText"
+         (click)="selectedItem(itemName)">
+      {{itemName}}
+    </div>
+  </div>
+</div>

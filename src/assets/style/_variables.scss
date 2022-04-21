@@ -1,0 +1,13 @@
+$brandWhite: var(--brandWhite);
+
+$borderRadiusM: var(--borderRadiusM);
+
+$fontSize: var(--fontSize);
+
+$fontWeight: var(--fontWeight);
+:root {
+    --brandWhite: #fff;
+    --fontSize: 16px;
+    --fontWeight: 400;
+    --borderRadiusM: 8px;
+}

@@ -1,0 +1,145 @@
+<section class="form-section">
+
+  <div class="title">
+    <h1>{{'Sign Up' | translate}}</h1>
+    <p>{{'It’s quick and easy.' | translate}}</p>
+  </div>
+  <hr>
+
+  <form [formGroup]="SignUpForm">
+
+    <div class="input-name-lastName">
+
+      <div class="input-container">
+        <input
+          placeholder='{{"Name" | translate}}'
+          formControlName="name"
+          [ngClass]="{'err': SignUpForm.get('name').invalid && isSubmitted}">
+
+        <div class="err-container" *ngIf="SignUpForm.get('name').invalid && isSubmitted">
+          <span> {{'Name is required' | translate}}</span>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input
+          placeholder='{{"Last Name" | translate}}'
+          formControlName="lastName"
+          [ngClass]="{'err': SignUpForm.get('lastName').invalid && isSubmitted}">
+
+        <div class="err-container" *ngIf="SignUpForm.get('lastName').invalid && isSubmitted">
+          <span>{{'Last Name is required' | translate}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="email">
+
+      <div class="input-container">
+        <input
+          placeholder='{{"Email" | translate}}'
+          formControlName="email"
+          [ngClass]="{'err': SignUpForm.get('email').invalid && isSubmitted }">
+
+        <div class="err-container"
+             *ngIf="SignUpForm.get('email').invalid && isSubmitted">
+          <span> {{'Email is required' | translate}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tel-container input-container">
+      <div class="phone-code"
+           [ngClass]="{'err': SignUpForm.get('tel').invalid && isSubmitted}">
+        <span>+374</span></div>
+      <input
+        placeholder='{{"Phone" | translate}}'
+        formControlName="tel"
+        maxlength="8"
+        minlength="8"
+        type="tel"
+        [ngClass]="{'err': SignUpForm.get('tel').invalid && isSubmitted}">
+
+      <div class="err-container" *ngIf="SignUpForm.get('tel').invalid && isSubmitted">
+        <span>{{'Phone number is not correct' | translate}}</span>
+      </div>
+    </div>
+
+    <app-drop-down
+      [data]="region"
+      TitleDrop='{{"Region" | translate}}'
+      [statusSearch]=false
+    ></app-drop-down>
+
+    <app-drop-down
+      [data]="city"
+      TitleDrop='{{"City, Village" | translate}}'
+    ></app-drop-down>
+
+    <app-drop-down
+      [data]="school"
+      TitleDrop='{{"School" | translate}}'
+    ></app-drop-down>
+
+    <app-select-drop-down
+      [data]="school"
+      TitleDrop='{{"Subject" | translate}}'
+    ></app-select-drop-down>
+
+    <app-select-drop-down
+      [data]="grade"
+      TitleDrop='{{"Grade" | translate}}'
+      [statusSearch]=false
+    ></app-select-drop-down>
+
+    <div class="password-container input-container">
+      <img src="assets/images/pass.svg" (click)="showPassword()">
+      <input
+        placeholder='{{"Password" | translate}}'
+        type="password"
+        #password
+        formControlName="password"
+        [ngClass]="{'err': SignUpForm.get('password').invalid &&  isSubmitted}">
+
+      <div class="err-container"
+           *ngIf="SignUpForm.get('password').invalid && isSubmitted">
+        <span> {{'Password is required' | translate}}</span>
+      </div>
+
+    </div>
+
+    <div class="confirmPass-container input-container">
+      <img src="../../assets/images/pass.svg" (click)="showConfirmPassword()">
+      <input
+        placeholder='{{"Confirm Password" | translate}}'
+        type="password"
+        #confirmPassword
+        formControlName="confirmPassword"
+        [ngClass]="{'err': SignUpForm.get('confirmPassword').invalid && isSubmitted }">
+
+      <div class="err-container"
+           *ngIf="SignUpForm.get('confirmPassword').invalid && isSubmitted">
+        <span> {{'Password is required' | translate}}</span>
+      </div>
+    </div>
+
+    <div class="submit-container">
+      <a href="#">{{'Register as a Donor' | translate}}</a>
+      <button (click)="onSubmit()">{{'Ok' | translate}}</button>
+    </div>
+
+  </form>
+
+  <div class="modal-err" *ngIf="isModal">
+    <div class="modal-close" (click)="closeModal()">
+      <img src="assets/images/x.svg">
+    </div>
+    <div class="modal-img">
+      <img src="assets/images/info.svg">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    </div>
+  </div>
+
+</section>

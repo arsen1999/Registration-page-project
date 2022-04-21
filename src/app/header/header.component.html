@@ -1,0 +1,38 @@
+<header>
+  <div class="header-section">
+
+    <div class="language">
+
+      <span
+        (click)="onSelectLgn(lng.key)"
+        *ngFor="let lng of languages"
+        [ngClass]="{'active-language': lng.key === settingsService.language}">
+        {{lng.value}}</span>
+
+    </div>
+
+    <div class="img-container">
+      <img src="assets/images/Group%201153.svg" class="next-generation-img">
+    </div>
+
+    <div class="nav-container">
+
+      <div class="nav-bar">
+        <span class="active">{{'Teachers' | translate}}</span>
+        <span>{{'Donors' | translate}}</span>
+        <span>{{'About Us' | translate}}</span>
+        <span>{{'Contact Us' | translate}}</span>
+        <span>{{'Blog' | translate}}</span>
+        <span class="sign-in"><img src="../../assets/images/coolicon.svg">{{'Sign In' | translate}}</span>
+      </div>
+
+      <div class="navbar-size">
+        <a href="" class="navbar-brand">{{'MENU' | translate}}</a>
+        <button type="button" class="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</header>
